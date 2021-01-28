@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+}
+
+.navcontainer {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.navcontainer h6 {
+  margin: 0;
+  padding: 5px;
+  display: inline-block;
+  font-size: 15px;
+}
