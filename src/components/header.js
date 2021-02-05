@@ -1,56 +1,34 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import "./header.component.css"
+import NavBar from "./NavBar"
 
 const Header = ({ siteTitle }) => (
-  <header className="header">
-    <div className="navcontainer">
-      <h6>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+  <header>
+    <NavBar/>
+    {/* <div className="h-6">
+      <h6 className="mx-2">
+        <Link to="/">{siteTitle}</Link>
       </h6>
-      <h6>
-        <Link
-          to="/about"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          About
-        </Link>
+      <h6 className="mx-2">
+        <Link to="/about">About</Link>
       </h6>
-      <h6>
-        <Link
-          to="/projects"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          Projects
-        </Link>
+      <h6 className="mx-2">
+        <Link to="/projects">Projects</Link>
       </h6>
-      <h6>
-        <Link
-          to="/contact"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          Contact
-        </Link>
+      <h6 className="mx-2">
+        <Link to="/contact">Contact</Link>
       </h6>
-    </div>
+      <h6 className="mx-2">
+        <Link to="/tail">tailwind</Link>
+      </h6> 
+      <h6 className="mx-2">
+        <Link to="/observer">Observer</Link>
+      </h6>
+      <h6 className="mx-2">
+        <Link to="/page-3">Page-3</Link>
+      </h6> 
+    </div>*/}
   </header>
 )
 

@@ -4,49 +4,30 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-
+//
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
+// import { useMediaQuery } from "react-responsive"
 
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          // maxWidth: 960,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            background: `black`,
-            textAlign: "center",
-            color: 'white'
-            // paddingTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built by
-          {` Pablo Godoy `}{'with '} 
-          <a style={{textDecoration: 'none', color: 'white'}}   href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <div >
+      <Header />
+      <main className='bg-black text-white'>{children}</main>
+    </div>
   )
 }
 

@@ -1,18 +1,64 @@
+// import React, { useState } from "react"
 import React from "react"
-import styles from "./works.module.css"
+import { workdata } from "../data/index"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
+const Works = () => {
+  // const [isShown, setIsShown] = useState(false)
 
-const Works = ({ works }) => {
+  const data = useStaticQuery(graphql`
+    {
+      memories: file(relativePath: { eq: "memories.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 200, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      proshop: file(relativePath: { eq: "proshop.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 200, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      valle: file(relativePath: { eq: "valle.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 200, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  const { valle, memories, proshop } = data
+  const dataList = [
+    valle.childImageSharp.fluid,
+    memories.childImageSharp.fluid,
+    proshop.childImageSharp.fluid,
+    valle.childImageSharp.fluid,
+  ]
+
+  const works = workdata
+
   return (
-    <div className={`${styles.box}`}>
+    <div>
+      {/* {isShown && <div>I'll appear when you hover over the button.</div>} */}
       {works.map((w, i) => (
-        <div key={i} className={`${styles.container}`}>
-          <img src={`${w.img}`} alt="Girl in a jacket" />
-          <h1 className={`${styles.h1}`}>{`${w.name}`}</h1>
-          <h3 className={`${styles.h3}`}>Description</h3>
-          <p className={`${styles.p}`}>{w.description}</p>
-          <button className={`${styles.button}`}>
-            <a href={`${w.url}`}>View site</a>
+        <div aria-hidden="true" key={i}>
+          {/* onMouseEnter={() => setIsShown(true)}
+          onMouseLeave={() => setIsShown(false)} */}
+          <div>
+            <Img fluid={dataList[i]} />
+          </div>
+          <h2>{`${w.name}`}</h2>
+          <p>{w.description}</p>
+          <button>
+            <a href={`${w.url}`} target="_blank" rel="noreferrer">
+              View site
+            </a>
           </button>
         </div>
       ))}

@@ -1,21 +1,14 @@
 import React from "react"
-import Layout from "../components/layout"
-// import StyledFullBackground from "../components/FullBackground"
-import StyledFullBackground from "../components/FullBackground"
-// import styles from "./index.module.css"
 
 const About = () => {
   return (
-      <Layout>
-        <StyledFullBackground>
-          <>
-            <h1 style={{ color: "white", paddingTop: "40px" }}>
-              Hola que tal esto es un about
-            </h1>
-          </>
-        </StyledFullBackground>
-      </Layout>
+    <div className="bg-transparent flex-col h-screen flex justify-center items-center">
+      <div className="h-screen container w-80 md:w-auto">
+        <h1 className="font-title font-semibold text-7xl md:text-8xl -ml-2 subpixel-antialiased">
+          Hola que tal esto es un about
+        </h1>
+      </div>
+    </div>
   )
 }
-
 export default About

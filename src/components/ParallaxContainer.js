@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react"
 import { animated as a, useSpring } from "react-spring"
 
-const calc1 = o => `translateY(${o * 0.05}px)`
-const calc2 = o => `translateY(${o * 0.07}px)`
+const calc1 = o => `translateY(${o * 0.5}px)`
+const calc2 = o => `translateY(${o * 0.007}px)`
 // const calc3 = o => `translateY(${o * 0.1}px)`
 
 const ParallaxContainer = ({ children }) => {
