@@ -3,8 +3,8 @@ import "../styles/global.css"
 
 const NavBar = () => {
   const [isShown, setIsShown] = useState(false)
-  const [toogle, setToogle] = useState(false)
-  const [more, setMore] = useState(false)
+  const [toogle, setToogle] = useState(true)
+  const [more, setMore] = useState(true)
   return (
     <div>
       <div class="fixed w-full m-0 p-0 bg-transparent ">
@@ -122,7 +122,6 @@ const NavBar = () => {
                           </p>
                         </div>
                       </a>
-                      {/* link */}
                       <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-600">
                         {/* <!-- Heroicon name: outline/cursor-click --> */}
                         <svg
@@ -150,7 +149,6 @@ const NavBar = () => {
                           </p>
                         </div>
                       </a>
-                      {/* link */}
                       <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-600">
                         {/* <!-- Heroicon name: outline/shield-check --> */}
                         <svg
@@ -177,7 +175,7 @@ const NavBar = () => {
                           </p>
                         </div>
                       </a>
-                      {/* link */}
+                      
                       <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-600">
                         {/* <!-- Heroicon name: outline/view-grid --> */}
                         <svg
@@ -509,7 +507,8 @@ const NavBar = () => {
               : "transition duration-200 ease-out opacity-0 scale-95"
           } absolute top-0 inset-x-0 p-0 transition transform origin-top-right md:hidden`}
         >
-          <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-gray-800 bg-opacity-95 text-gray-100 divide-y-2 divide-gray-50">
+          {/* menu container */}
+          <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-gray-800 text-gray-100 divide-y-2 divide-gray-50">
             <div class="pt-5 pb-6 px-5">
               <div class="flex items-center justify-between">
                 <div>
