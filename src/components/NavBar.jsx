@@ -64,7 +64,7 @@ const NavBar = () => {
           } absolute top-0 inset-x-0 p-0 transition transform origin-top-right md:hidden`}
         >
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-gray-800 text-gray-100 divide-y-2 divide-gray-50">
-            <div className="pt-5 pb-6 px-5">
+            <div className="pt-5 pb-0 px-5">
               <div className="flex items-center justify-between">
                 <div>
                   {/* Logo!!!! */}
@@ -104,11 +104,11 @@ const NavBar = () => {
                 <nav className="grid gap-y-8"></nav>
               </div>
             </div>
-            <div className="py-6 px-5 space-y-6 border-none">
+            <div className="pb-6 px-5 space-y-6 border-none">
               <div>
                 <h2
                   href="#anchor"
-                  className="w-full flex items-center justify-center px-4 py-2 font-medium text-gray-100"
+                  className="w-full flex items-center justify-center px-4 py-0 font-medium text-gray-100"
                 >
                   Contact me
                 </h2>

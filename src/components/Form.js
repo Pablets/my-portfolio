@@ -1,7 +1,11 @@
 import React from "react"
+import { useMediaQuery } from "react-responsive"
 import { useForm } from "react-hook-form"
 
 const Form = () => {
+  const isDesktop = useMediaQuery({
+    query: "(min-device-width: 1224px)",
+  })
   const { register, handleSubmit } = useForm()
   const FAKE_GATEWAY_URL = "https://jsonplaceholder.typicode.com/posts"
   const onSubmit = data => {
@@ -19,10 +23,16 @@ const Form = () => {
       // handle server errors
     }
   }
+
   return (
     <div>
-      {/* <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"> */}
-        <div className="max-w-md w-full space-y-8">
+      <div
+        className={`${
+          isDesktop &&
+          "min-h-screen flex items-center  justify-center py-12 px-4 sm:px-6 lg:px-8"
+        }`}
+      >
+        <div className={`${isDesktop && "w-96"} max-w-md space-y-8`}>
           <form
             className="mt-8 space-y-6"
             onSubmit={handleSubmit(onSubmit)}
@@ -61,6 +71,19 @@ const Form = () => {
                   placeholder="Email address"
                 />
               </div>
+              <div>
+                <label htmlFor="email-address" className="sr-only">
+                  Message:
+                </label>
+                <textarea
+                  id="email-address"
+                  rows={4}
+                  name="email"
+                  type="textArea"
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Leave a message"
+                />
+              </div>
             </div>
             <div>
               <button
@@ -73,7 +96,7 @@ const Form = () => {
           </form>
         </div>
       </div>
-    // </div>
+    </div>
   )
 }
 
