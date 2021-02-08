@@ -5,9 +5,9 @@ import Form from "./Form"
 const NavBar = () => {
   const [isShown, setIsShown] = useState(false)
   return (
-    <div>
-      <div className="fixed w-full m-0 p-0 bg-transparent ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <div className='right-0 fixed z-50 w-full'>
+      <div className="w-full m-0 p-0 bg-transparent ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-2">
           {/* Acá se cambia la altura de la navbar */}
           <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
