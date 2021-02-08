@@ -7,6 +7,7 @@
 //
 import React from "react"
 import PropTypes from "prop-types"
+import Footer from './Footer'
 // import { useStaticQuery, graphql } from "gatsby"
 // import { useMediaQuery } from "react-responsive"
 
@@ -24,9 +25,10 @@ const Layout = ({ children }) => {
   // `)
 
   return (
-    <div >
+    <div>
       <Header />
-      <main className='bg-black text-white'>{children}</main>
+      <main className="bg-transparent text-white">{children}</main>
+      <Footer/>
     </div>
   )
 }

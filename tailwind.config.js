@@ -7,10 +7,13 @@ module.exports = {
         title: ["Montserrat"],
         sans: ["Roboto"],
       },
+      borderWidth: {
+        1: "1px",
+      },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }

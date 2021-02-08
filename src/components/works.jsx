@@ -3,6 +3,16 @@ import React from "react"
 import { workdata } from "../data/index"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import {
+  SiHtml5,
+  SiJavascript,
+  SiCss3,
+  SiPostgresql,
+  SiReact,
+  SiRedux,
+  SiNodeDotJs,
+  SiMongodb,
+} from "react-icons/si"
 
 const Works = () => {
   // const [isShown, setIsShown] = useState(false)
@@ -44,22 +54,62 @@ const Works = () => {
   const works = workdata
 
   return (
-    <div>
+    <div className="flex flex-initial justify-evenly flex-wrap">
       {/* {isShown && <div>I'll appear when you hover over the button.</div>} */}
       {works.map((w, i) => (
-        <div aria-hidden="true" key={i}>
+        <div
+          className="  max-w-lg min-w-96 w-96 bg-gray-200 p-6 ring-gray-300 ring-1 rounded shadow-2xl  m-2"
+          aria-hidden="true"
+          key={i}
+        >
           {/* onMouseEnter={() => setIsShown(true)}
           onMouseLeave={() => setIsShown(false)} */}
-          <div>
-            <Img fluid={dataList[i]} />
+          <h2 className="text-xl mb-3 -mt-3">{`${w.name}`}</h2>
+          <div className="">
+            <Img className="-mx-6 mt-3" fluid={dataList[i]} />
           </div>
-          <h2>{`${w.name}`}</h2>
-          <p>{w.description}</p>
-          <button>
-            <a href={`${w.url}`} target="_blank" rel="noreferrer">
-              View site
-            </a>
-          </button>
+          <p className="mt-3">{w.description}</p>
+
+          <div className="mt-3 grid grid-cols-2">
+            <div className="text-left align-middle">
+              {w.skills.includes("html") && (
+                <SiHtml5 className="inline-block text-2xl my-2 px-1 react-icons " />
+              )}
+              {w.skills.includes("css") && (
+                <SiCss3 className="inline-block text-2xl my-2 px-1 react-icons" />
+              )}
+              {w.skills.includes("javascript") && (
+                <SiJavascript className="inline-block text-2xl my-2 px-1 react-icons" />
+              )}
+              {w.skills.includes("postgres") && (
+                <SiPostgresql className="inline-block text-2xl my-2 px-1 react-icons" />
+              )}
+              {w.skills.includes("react") && (
+                <SiReact className="inline-block text-2xl my-2 px-1 react-icons" />
+              )}
+              {w.skills.includes("redux") && (
+                <SiRedux className="inline-block text-2xl my-2 px-1 react-icons" />
+              )}
+              {w.skills.includes("node") && (
+                <SiNodeDotJs className="inline-block text-2xl my-2 px-1 react-icons" />
+              )}
+              {w.skills.includes("mongo") && (
+                <SiMongodb className="inline-block text-2xl my-2 px-1 react-icons" />
+              )}
+            </div>
+            <div className="flex justify-end text-right align-middle">
+              <button className=" p-2 rounded bg-gray-300 hover:bg-gray-400">
+                <a
+                  className="h-full"
+                  href={`${w.url}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View site
+                </a>
+              </button>
+            </div>
+          </div>
         </div>
       ))}
     </div>

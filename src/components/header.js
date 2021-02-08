@@ -1,9 +1,9 @@
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import NavBar from "./NavBar"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header>
     <NavBar/>
     {/* <div className="h-6">

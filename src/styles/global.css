@@ -531,3 +531,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .st0
+{
+	background-image: linear-gradient( 179.4deg,  rgba(8, 9, 13, 1) -27.7%, rgb(78, 197, 241) 165.8% );
+}
+.st1
+{
+	background : -moz-radial-gradient(51% 72.35%, circle farthest-corner, rgba(175, 97, 24, 1) 23.44%, rgba(180, 97, 25, 0.98) 23.97%, rgba(202, 94, 29, 0.89) 27.01%, rgba(220, 92, 32, 0.77) 30.55%, rgba(232, 91, 34, 0.64) 34.85%, rgba(239, 90, 36, 0.45) 40.7%, rgba(241, 90, 36, 0) 55.03%);
+	background : -webkit-radial-gradient(51% 72.35%, circle farthest-corner, rgba(175, 97, 24, 1) 23.44%, rgba(180, 97, 25, 0.98) 23.97%, rgba(202, 94, 29, 0.89) 27.01%, rgba(220, 92, 32, 0.77) 30.55%, rgba(232, 91, 34, 0.64) 34.85%, rgba(239, 90, 36, 0.45) 40.7%, rgba(241, 90, 36, 0) 55.03%);
+	background : -webkit-gradient(radial,51% 72.35% ,730.72 , 51% 72.35%, 3116.8 ,color-stop(0.2344,rgba(175, 97, 24, 1) ),color-stop(0.2397,rgba(180, 97, 25, 0.98) ),color-stop(0.2701,rgba(202, 94, 29, 0.89) ),color-stop(0.3055,rgba(220, 92, 32, 0.77) ),color-stop(0.3485,rgba(232, 91, 34, 0.64) ),color-stop(0.407,rgba(239, 90, 36, 0.45) ),color-stop(0.5503,rgba(241, 90, 36, 0) ));
+	background : -o-radial-gradient(51% 72.35%, circle farthest-corner, rgba(175, 97, 24, 1) 23.44%, rgba(180, 97, 25, 0.98) 23.97%, rgba(202, 94, 29, 0.89) 27.01%, rgba(220, 92, 32, 0.77) 30.55%, rgba(232, 91, 34, 0.64) 34.85%, rgba(239, 90, 36, 0.45) 40.7%, rgba(241, 90, 36, 0) 55.03%);
+	background : -ms-radial-gradient(51% 72.35%, circle farthest-corner, rgba(175, 97, 24, 1) 23.44%, rgba(180, 97, 25, 0.98) 23.97%, rgba(202, 94, 29, 0.89) 27.01%, rgba(220, 92, 32, 0.77) 30.55%, rgba(232, 91, 34, 0.64) 34.85%, rgba(239, 90, 36, 0.45) 40.7%, rgba(241, 90, 36, 0) 55.03%);
+	background : radial-gradient(51% 72.35%, circle farthest-corner, rgba(175, 97, 24, 1) 23.44%, rgba(180, 97, 25, 0.98) 23.97%, rgba(202, 94, 29, 0.89) 27.01%, rgba(220, 92, 32, 0.77) 30.55%, rgba(232, 91, 34, 0.64) 34.85%, rgba(239, 90, 36, 0.45) 40.7%, rgba(241, 90, 36, 0) 55.03%);
+	border-style : Solid;
+	border-color : #000000;
+	border-color : rgba(0, 0, 0, 1);
+	border-width : 1px;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Stlye=2);
+  
+}
+.react-icons {
+  vertical-align: middle;
+}
+}
