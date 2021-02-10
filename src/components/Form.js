@@ -17,9 +17,10 @@ const Form = () => {
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = data => {
+    console.log(data)
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: { "Content-Type": 'application/x-www-form-urlencoded' },
       body: encode({
         "form-name": data,
       }),
@@ -125,11 +126,13 @@ const Form = () => {
                 <textarea
                   id="email-address"
                   rows={3}
-                  name="email"
+                  name="message"
                   type="textArea"
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                   placeholder="Leave a message"
-                  ref={register}
+                  ref={register({
+                    required: false,
+                  })}
                 />
               </div>
             </div>
