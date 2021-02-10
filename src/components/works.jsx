@@ -58,7 +58,7 @@ const Works = () => {
       {/* {isShown && <div>I'll appear when you hover over the button.</div>} */}
       {works.map((w, i) => (
         <div
-          className="  max-w-lg min-w-96 w-96 bg-gray-200 p-6 ring-gray-300 ring-1 rounded shadow-2xl m2 md:mr-10 md:mb-10"
+          className="mb-10 max-w-lg min-w-96 w-96 bg-gray-200 p-6 ring-gray-300 ring-1 rounded shadow-2xl m2 md:mr-10"
           aria-hidden="true"
           key={i}
         >

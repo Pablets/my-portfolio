@@ -1,129 +1,95 @@
 import React from "react"
-import Particles from "react-particles-js"
+import { useInView } from "react-intersection-observer"
+import { motion, AnimateSharedLayout } from "framer-motion"
+import { useMediaQuery } from "react-responsive"
 
-const About = () => {
+const About = ({ background }) => {
+  const isDesktop = useMediaQuery({
+    query: "(min-device-width: 1224px)",
+  })
+
+  const variant = {
+    visible: { x: 0, opacity: 1 },
+    hidden: { x: -500, opacity: 0 },
+  }
+
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.4,
+  })
+
+  // if(!isDesktop){
+  //   inView = true;
+  // }
+
   return (
-    <div className="relative h-screen mx-3.5 md:w-auto md:grid md:grid-cols-12 md:grid-rows-3 md:gap-6">
-      <div className="row-start-2 col-span-3 ">
-        <h2 className="min-w-max font-title text-gray-500 text-left font-semibold md:text-5xl ml-2 subpixel-antialiased">
-          Sobre mi
-        </h2>
-      </div>
-      <div className="row-start-2 col-span-4">
-        <p className="min-w-min text-lg justify-self-start">
-          Soy desarollador web con experiencia en MERN stack, diseño gráfico
-          para web y UX/UI. Me apasiona el mundo del desarrollo web en especial
-          el diseño de interfaces y experiencias de usuario. Vivo en Buenos
-          aires, actualmente me desarrollo como QA en el Ministerio de
-          Desarrollo Productivo del gobierno de la ciudad de Buenos Aires.
-        </p>
-      </div>
-      <Particles
-        className="row-start-2 bg-transparent absolute top-0 right-0 z-0 h-auto w-max"
-        params={{
-          particles: {
-            number: {
-              value: 70,
-              density: {
-                enable: true,
-                value_area: 1000,
-              },
-            },
-            color: {
-              value: "#383838",
-            },
-            shape: {
-              type: "circle",
-              stroke: {
-                width: 0,
-                color: "#383838",
-              },
-            },
-            opacity: {
-              value: 0.5,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 1,
-                opacity_min: 0.1,
-                sync: false,
-              },
-            },
-            size: {
-              value: 3,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 40,
-                size_min: 0.1,
-                sync: false,
-              },
-            },
-            line_linked: {
-              enable: true,
-              distance: 200,
-              color: "#383838",
-              opacity: 0.4,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 1,
-              direction: "none",
-              random: false,
-              straight: false,
-              out_mode: "out",
-              bounce: false,
-              attract: {
-                enable: true,
-                rotateX: 4000,
-                rotateY: 4000,
-              },
-            },
-          },
-          interactivity: {
-            detect_on: "canvas",
-            events: {
-              onhover: {
-                enable: false,
-                mode: "repulse",
-              },
-              onclick: {
-                enable: false,
-                mode: "push",
-              },
-              resize: true,
-            },
-            modes: {
-              grab: {
-                distance: 400,
-                line_linked: {
-                  opacity: 1,
-                },
-              },
-              bubble: {
-                distance: 400,
-                size: 40,
-                duration: 2,
-                opacity: 8,
-                speed: 3,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-              push: {
-                particles_nb: 4,
-              },
-              remove: {
-                particles_nb: 2,
-              },
-            },
-          },
-          retina_detect: true,
-        }}
-      />
+    <div>
+      {isDesktop ? (
+        <div ref={ref}>
+          <AnimateSharedLayout>
+            <div className="sm:static md:relative h-screen mx-3.5 md:mx-0 md:w-auto md:grid md:grid-cols-12 md:grid-rows-6 md:gap-6">
+              <motion.div
+                animate={inView ? "visible" : "hidden"}
+                transition={{ ease: "easeOut", duration: 1 }}
+                variants={variant}
+                className="row-auto row-start-2 col-start-4"
+              >
+                <h2 className="min-w-max font-title text-gray-500 text-left font-semibold md:text-5xl subpixel-antialiased">
+                  About me
+                </h2>
+              </motion.div>
+              <motion.div
+                animate={inView ? "visible" : "hidden"}
+                transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
+                variants={variant}
+                style={{ opacity: `${background}` }}
+                className="mx-5 md:mx-0 row-start-3 row-auto col-start-4 col-span-4 w-auto md:w-11/12"
+              >
+                <p className="min-w-min text-gray-500 text-lg justify-self-start">
+                  I'm a web developer with experiencie in MERN stack & UI/UX.
+                  I'm from Buenos Aires, doing QA in Productive Development
+                  Ministery of Buenos Aires Goverment. I'm passionate about what
+                  I do and what I can achieve.
+                </p>
+                <p className="min-w-min text-gray-500 text-lg justify-self-start">
+                  I belive that my most important skill its the continous desire
+                  of keep learning all the time.
+                </p>
+                <p className="min-w-min text-gray-500 text-lg justify-self-start">
+                  Hope to work with you.
+                </p>
+              </motion.div>
+            </div>
+          </AnimateSharedLayout>
+        </div>
+      ) : (
+        <div>
+          <div className="sm:static md:relative h-screen mx-3.5 md:mx-0 md:w-auto md:grid md:grid-cols-12 md:grid-rows-6 md:gap-6">
+            <div className="mx-5 md:row-auto md:row-start-2 md:col-start-4 ">
+              <h2 className="min-w-max font-title text-gray-500 text-left font-semibold text-4xl md:text-5xl ml-0 mb-6 md:mb-0 w-auto subpixel-antialiased">
+                About me
+              </h2>
+            </div>
+            <div className="mx-5 md:mx-0 md:row-start-3 md:row-auto md:col-start-4 md:col-span-4 w-auto md:w-11/12">
+              <p className="min-w-min text-gray-500 text-lg justify-self-start">
+                I'm a web developer with experiencie in MERN stack & UI/UX. I'm
+                from Buenos Aires, doing QA in Productive Development Ministery
+                of Buenos Aires Goverment. I'm passionate about what I do and
+                what I can achieve.
+              </p>
+              <p className="min-w-min text-gray-500 text-lg justify-self-start">
+                I belive that my most important skill its the continous desire
+                of keep learning all the time.
+              </p>
+              <p className="min-w-min text-gray-500 text-lg justify-self-start">
+                Hope to work with you.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
+
 export default About

@@ -28,17 +28,16 @@ const Form = () => {
     <div>
       <div
         className={`${
-          isDesktop &&
-          "min-h-screen flex items-center  justify-center py-12 px-4 sm:px-6 lg:px-8"
-        }`}
+          isDesktop && "flex items-center"
+        } py-1 px-0 `}
       >
-        <div className={`${isDesktop && "w-96"} max-w-md space-y-8`}>
+        <div className="md:w-96 max-w-md">
           <form
             className="mt-8 space-y-6"
             onSubmit={handleSubmit(onSubmit)}
             method="POST"
           >
-            <div className="rounded-md shadow-sm -space-y-px">
+            <div className="rounded-md shadow-sm">
               <div>
                 <label htmlFor="name" className="sr-only">
                   Name
