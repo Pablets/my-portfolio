@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import { useMediaQuery } from "react-responsive"
 
-const About = ({ background }) => {
+const About = () => {
   const isDesktop = useMediaQuery({
     query: "(min-device-width: 1224px)",
   })
@@ -42,7 +42,6 @@ const About = ({ background }) => {
                 animate={inView ? "visible" : "hidden"}
                 transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
                 variants={variant}
-                style={{ opacity: `${background}` }}
                 className="mx-5 md:mx-0 row-start-3 row-auto col-start-4 col-span-4 w-auto md:w-11/12"
               >
                 <p className="min-w-min text-gray-500 text-lg justify-self-start">

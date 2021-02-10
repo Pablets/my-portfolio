@@ -1,33 +1,45 @@
 import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-// import { useMediaQuery } from "react-responsive"
-// import Particles from "react-particles-js"
+import { useMediaQuery } from "react-responsive"
+import TopButton from "../components/TopButton"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import About from "./about"
 import Projects from "./projects"
 import Contact from "./contact"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const IndexPage = () => {
-  const [background, setBackground] = useState(0)
+  const [top, setTop] = useState(false)
 
-  const changeBackground = () => {
-    if (window.scrollY > 150) {
-      const n = Number(((window.scrollY - 150) / 500).toFixed(1))
-      setBackground(n)
+  const isDesktop = useMediaQuery({
+    query: "(min-device-width: 1224px)",
+  })
+
+  const handleScroll = () => {
+    if (window.scrollY > 200) {
+      setTop(true)
+    } else {
+      setTop(false)
     }
   }
-  useEffect(() => window.addEventListener("scroll", changeBackground))
+
+  useEffect(() => window.addEventListener("scroll", handleScroll))
 
   const variants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
   }
 
+  const topVariants = {
+    visible: { x: 500 },
+    hidden: { x: 0 },
+  }
+
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="bg-transparent sm:static text-gray-400 w-full ">
+      <div id="top" className="bg-transparent sm:static text-gray-400 w-full ">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -49,7 +61,23 @@ const IndexPage = () => {
             </div>
           </div>
         </motion.div>
-        <About background={background} />
+
+        <motion.div
+          animate={top ? "hidden" : "visible"}
+          transition={{ ease: "easeOut", duration: 1 }}
+          variants={topVariants}
+          className="fixed bottom-4 right-3"
+        >
+          {isDesktop ? (
+            <AnchorLink to="/#top" title="Check out our team!">
+              <TopButton />
+            </AnchorLink>
+          ) : (
+            <div></div>
+          )}
+        </motion.div>
+
+        <About />
         <Projects />
         <Contact />
       </div>

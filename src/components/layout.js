@@ -13,7 +13,7 @@ import Footer from "./Footer"
 
 import Header from "./header"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, inView }) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {

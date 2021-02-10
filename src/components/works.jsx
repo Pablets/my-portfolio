@@ -64,11 +64,11 @@ const Works = () => {
         >
           {/* onMouseEnter={() => setIsShown(true)}
           onMouseLeave={() => setIsShown(false)} */}
-          <h2 className="text-xl mb-3 -mt-3">{`${w.name}`}</h2>
+          <h2 className="text-xl mb-3 md:mb-6 -mt-3 md:mt-0 text-left">{`${w.name}`}</h2>
           <div className="">
-            <Img className="-mx-6 mt-3" fluid={dataList[i]} />
+            <Img className="-mx-6 mt-0 md:mt-6" fluid={dataList[i]} />
           </div>
-          <p className="mt-3">{w.description}</p>
+          <p className="mt-3 text-left h-32 md:h-24">{w.description}</p>
 
           <div className="mt-3 grid grid-cols-2">
             <div className="text-left align-middle">
@@ -98,7 +98,7 @@ const Works = () => {
               )}
             </div>
             <div className="flex justify-end text-right align-middle">
-              <button className=" p-2 rounded bg-gray-300 hover:bg-gray-400">
+              <button className=" p-2 rounded hover:bg-gray-300">
                 <a
                   className="h-full"
                   href={`${w.url}`}
