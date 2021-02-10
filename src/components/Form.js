@@ -4,9 +4,16 @@ import { useMediaQuery } from "react-responsive"
 import { useForm } from "react-hook-form"
 
 function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  const content = Object.keys(data)
+    .map(key =>
+      encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+    )
     .join("&")
+ 
+    // console.log(content)
+      
+    return content
+ 
 }
 
 const Form = () => {
@@ -17,18 +24,16 @@ const Form = () => {
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = data => {
-    console.log(data)
+    // console.log({ ...data })
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        body: {
-          "name": data.name,
-          "email": data.email,
-          "message": data.message,
-        },
-      })
+        "name": data.name,
+        "email": data.email,
+        "message": data.message,
+      }),
     }).catch(error => alert(error))
   }
 
