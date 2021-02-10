@@ -20,10 +20,11 @@ const Form = () => {
     console.log(data)
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": 'application/x-www-form-urlencoded' },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": data,
-      }),
+        "form-name": "contact",
+        body: data,
+      })
     }).catch(error => alert(error))
   }
 
@@ -32,6 +33,7 @@ const Form = () => {
       <div className={`${isDesktop && "flex items-center"} py-1 px-0 `}>
         <div className="md:w-96 max-w-md ">
           <form
+            id="contact"
             className="mt-8 space-y-6"
             method="post"
             data-netlify="true"
