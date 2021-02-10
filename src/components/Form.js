@@ -23,7 +23,11 @@ const Form = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        body: data,
+        body: {
+          "name": data.name,
+          "email": data.email,
+          "message": data.message,
+        },
       })
     }).catch(error => alert(error))
   }
@@ -122,11 +126,11 @@ const Form = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email-address" className="sr-only">
+                <label htmlFor="message" className="sr-only">
                   Message:
                 </label>
                 <textarea
-                  id="email-address"
+                  id="message"
                   rows={3}
                   name="message"
                   type="textArea"
