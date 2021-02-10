@@ -1,27 +1,29 @@
 import React from "react"
+// import { navigate } from "gatsby-link"
 import { useMediaQuery } from "react-responsive"
 import { useForm } from "react-hook-form"
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
 
 const Form = () => {
   const isDesktop = useMediaQuery({
     query: "(min-device-width: 1224px)",
   })
+
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = data => {
-    try {
-      fetch("/", {
-        method: "POST",
-        mode: "cors",
-        cache: "no-cache",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-    } catch (error) {
-      alert(error)
-    }
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": data,
+      }),
+    }).catch(error => alert(error))
   }
 
   return (
@@ -31,22 +33,16 @@ const Form = () => {
           <form
             className="mt-8 space-y-6"
             method="post"
-            netlify-honeypot="bot-field"
             data-netlify="true"
+            netlify-honeypot="bot-field"
             name="contact"
-            action="/thanks/"
+            // action="/thanks/"
             onSubmit={handleSubmit(onSubmit)}
           >
             <div className="rounded-md shadow-sm ">
               <div className="invissible ">
                 <label>
-                  <input
-                    type="hidden"
-                    name="form-name"
-                    value="contact"
-                    hidden
-                    aria-hidden
-                  />
+                  <input type="hidden" name="form-name" value="contact" />
                 </label>
                 <label>
                   <input type="hidden" name="bot-field" />
@@ -138,12 +134,10 @@ const Form = () => {
               </div>
             </div>
             <div>
-              <button
+              <input
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                Sign in
-              </button>
+              />
             </div>
           </form>
         </div>
