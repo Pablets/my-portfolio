@@ -2,18 +2,13 @@ import React from "react"
 // import { navigate } from "gatsby-link"
 import { useMediaQuery } from "react-responsive"
 import { useForm } from "react-hook-form"
+import { navigate } from "gatsby"
 
 function encode(data) {
   const content = Object.keys(data)
-    .map(key =>
-      encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-    )
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&")
- 
-    // console.log(content)
-      
-    return content
- 
+  return content
 }
 
 const Form = () => {
@@ -30,11 +25,13 @@ const Form = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        "name": data.name,
-        "email": data.email,
-        "message": data.message,
+        name: data.name,
+        email: data.email,
+        message: data.message,
       }),
-    }).catch(error => alert(error))
+    })
+    .then(() => navigate('/thank-you'))
+    .catch(error => alert(error))
   }
 
   return (

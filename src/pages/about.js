@@ -32,7 +32,7 @@ const About = () => {
                 animate={inView ? "visible" : "hidden"}
                 transition={{ ease: "easeOut", duration: 1 }}
                 variants={variant}
-                className="row-auto row-start-2 col-start-4"
+                className="row-start-2 col-start-4"
               >
                 <h2 className="min-w-max font-title text-gray-500 text-left font-semibold md:text-5xl subpixel-antialiased">
                   About me

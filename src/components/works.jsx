@@ -1,7 +1,7 @@
 // import React, { useState } from "react"
 import React from "react"
 import { workdata } from "../data/index"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import {
   SiHtml5,
@@ -12,7 +12,10 @@ import {
   SiRedux,
   SiNodeDotJs,
   SiMongodb,
+  SiGatsby,
+  SiTailwindcss,
 } from "react-icons/si"
+import { AiOutlinePlusCircle } from "react-icons/ai"
 
 const Works = () => {
   // const [isShown, setIsShown] = useState(false)
@@ -73,41 +76,45 @@ const Works = () => {
           <div className="mt-3 grid grid-cols-2">
             <div className="text-left align-middle">
               {w.skills.includes("html") && (
-                <SiHtml5 className="inline-block text-2xl my-2 px-1 react-icons " />
+                <SiHtml5 className="inline-block text-3xl my-2 px-1 react-icons " />
               )}
               {w.skills.includes("css") && (
-                <SiCss3 className="inline-block text-2xl my-2 px-1 react-icons" />
+                <SiCss3 className="inline-block text-3xl my-2 px-1 react-icons" />
               )}
               {w.skills.includes("javascript") && (
-                <SiJavascript className="inline-block text-2xl my-2 px-1 react-icons" />
+                <SiJavascript className="inline-block text-3xl my-2 px-1 react-icons" />
               )}
               {w.skills.includes("postgres") && (
-                <SiPostgresql className="inline-block text-2xl my-2 px-1 react-icons" />
+                <SiPostgresql className="inline-block text-3xl my-2 px-1 react-icons" />
               )}
               {w.skills.includes("react") && (
-                <SiReact className="inline-block text-2xl my-2 px-1 react-icons" />
+                <SiReact className="inline-block text-3xl my-2 px-1 react-icons" />
               )}
               {w.skills.includes("redux") && (
-                <SiRedux className="inline-block text-2xl my-2 px-1 react-icons" />
+                <SiRedux className="inline-block text-3xl my-2 px-1 react-icons" />
               )}
               {w.skills.includes("node") && (
-                <SiNodeDotJs className="inline-block text-2xl my-2 px-1 react-icons" />
+                <SiNodeDotJs className="inline-block text-3xl my-2 px-1 react-icons" />
               )}
               {w.skills.includes("mongo") && (
-                <SiMongodb className="inline-block text-2xl my-2 px-1 react-icons" />
+                <SiMongodb className="inline-block text-3xl my-2 px-1 react-icons" />
+              )}
+              {w.skills.includes("gatsby") && (
+                <SiGatsby className="inline-block text-3xl my-2 px-1 react-icons" />
+              )}
+              {w.skills.includes("tailwind") && (
+                <SiTailwindcss className="inline-block text-3xl my-2 px-1 react-icons" />
               )}
             </div>
-            <div className="flex justify-end text-right align-middle">
-              <button className=" p-2 rounded hover:bg-gray-300">
-                <a
-                  className="h-full"
-                  href={`${w.url}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View site
-                </a>
-              </button>
+            <div className="flex justify-self-end text-right align-middle border-2 rounded bg-gray-300 hover:border hover:border-gray-400 max-w-max ">
+              <Link
+                to={`/${w.url}`}
+                rel="noreferrer"
+                className="w-auto p-2 rounded hover:text-gray-500 flex flex-row justify-center items-center"
+              >
+                <p className="text-lg mr-1">More info</p>
+                <AiOutlinePlusCircle className="text-2xl " />
+              </Link>
             </div>
           </div>
         </div>
