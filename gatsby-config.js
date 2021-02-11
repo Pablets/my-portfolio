@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `PG`,
-    description: `Im a developer living in Buenos Aires, always looking for ways to learn new things.`,
-    author: `Pablets`,
+    title: `Pablo Godoy`,
+    description: `Full stack developer lloking for a job, currently working with MERN stack and jamstack .`,
+    author: `Pablo Godoy`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,7 +38,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/pablo-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
