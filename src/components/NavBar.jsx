@@ -32,7 +32,6 @@ const NavBar = () => {
                 {isDesktop && (
                   <span className="font-black tracking-wide text-3xl text-gray-600">{`</p>`}</span>
                 )}
-                {/* <Img  className="h-14 w-14 sm:h-14 p-10 "  fluid={source} /> */}
               </a>
             </div>
           </div>
