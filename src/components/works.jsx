@@ -48,10 +48,9 @@ const Works = () => {
 
   const { valle, memories, proshop } = data
   const dataList = [
-    valle.childImageSharp.fluid,
-    memories.childImageSharp.fluid,
     proshop.childImageSharp.fluid,
     valle.childImageSharp.fluid,
+    memories.childImageSharp.fluid,
   ]
 
   const works = workdata
