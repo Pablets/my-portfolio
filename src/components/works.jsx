@@ -107,7 +107,7 @@ const Works = () => {
             </div>
             <div className="flex justify-self-end text-right align-middle border-2 rounded bg-gray-300 hover:border hover:border-gray-400 max-w-max ">
               <Link
-                to={`/${w.url}`}
+                to={`${w.url}`}
                 rel="noreferrer"
                 className="w-auto p-2 rounded hover:text-gray-500 flex flex-row justify-center items-center"
               >
