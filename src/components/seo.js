@@ -54,10 +54,10 @@ function SEO({ description, lang, meta, title }) {
           property: `og:type`,
           content: `website`,
         },
-        { property: "og:image", content: `http://www.p-godoy${defaultImage}` },
+        { property: "og:image", content: `http://i.ibb.co/svw3qpC/p-godoy-img.jpg` },
         {
           property: `og:image:secure_url`,
-          content: `https://www.p-godoy${defaultImage}`,
+          content: `https://i.ibb.co/svw3qpC/p-godoy-img.jpg`,
         },
         { property: "og:image:type", content: "image/jpeg" },
         { property: "og:image:width", content: "600" },
