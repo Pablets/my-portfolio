@@ -30,7 +30,7 @@ const NavBar = () => {
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <a href="#anchor ">
                 {isDesktop && (
-                  <span className="font-black tracking-wide text-3xl text-gray-600">{`</p>`}</span>
+                  <span className="font-black tracking-wide text-3xl text-gray-600">{`<\/p>`}</span>
                 )}
               </a>
             </div>
