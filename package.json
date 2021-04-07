@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Pablo-Godoy-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My humble developer portfolio (in construction)",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Pablo Godoy - godoypablom@gmail.com",
   "dependencies": {
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.2.4",

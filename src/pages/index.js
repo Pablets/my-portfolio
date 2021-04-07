@@ -8,7 +8,7 @@ import About from "./about"
 import Projects from "./projects"
 import Contact from "./contact"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
-import pdf from '../pdf/pablo-godoy-resume.pdf'
+import pdf from "../pdf/pablo-godoy-resume.pdf"
 
 const IndexPage = () => {
   const [top, setTop] = useState(false)
@@ -39,7 +39,13 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        description={`Full stack developer lloking for a job, currently working with MERN stack and jamstack .`}
+        author={`Pablo Godoy`}
+        url={"https://www.p-godoy.com/"}
+        image={"/images/p-godoy-img.jpg"}
+      />
       <div id="top" className="bg-transparent sm:static text-gray-400 w-full ">
         <motion.div
           initial="hidden"
@@ -59,7 +65,9 @@ const IndexPage = () => {
               <h5 className="subpixel-antialiased text-gray-400 text-2xl md:text-3xl tracking-wider max-w-max">
                 Fullstack web developer
               </h5>
-              <a className='hidden' href={pdf} >resume</a>
+              <a className="hidden" href={pdf}>
+                resume
+              </a>
             </div>
           </div>
         </motion.div>

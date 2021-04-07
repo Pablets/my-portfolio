@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Pablo Godoy`,
-    description: `Full stack developer lloking for a job, currently working with MERN stack and jamstack .`,
+    description: `Full stack developer, currently working with MERN stack.`,
     author: `Pablo Godoy`,
+    url: "https://www.p-godoy.com/",
+    image: "/images/p-godoy-img.jpg"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
