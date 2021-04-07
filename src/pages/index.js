@@ -40,11 +40,11 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO
-        title="Home"
-        description={`Full stack developer lloking for a job, currently working with MERN stack and jamstack .`}
+        title="Pablo Godoy portfolio"
+        description={`Full stack developer currently working with MERN stack.`}
         author={`Pablo Godoy`}
         url={"https://www.p-godoy.com/"}
-        image={"/images/p-godoy-img.jpg"}
+        image={"https://www.p-godoy.com/images/p-godoy-img.jpg"}
       />
       <div id="top" className="bg-transparent sm:static text-gray-400 w-full ">
         <motion.div

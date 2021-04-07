@@ -58,7 +58,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: defaultImage,
+          content: `https://www.p-godoy/${defaultImage}`,
         },
       ].concat(meta)}
     />
