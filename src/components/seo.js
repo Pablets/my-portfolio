@@ -56,12 +56,16 @@ function SEO({ description, lang, meta, title }) {
           property: `og:type`,
           content: `website`,
         },
+        { property: "og:image", content: "http://example.com/ogp.jpg" },
         {
-          property: `og:image`,
+          property: `og:image:secure_url`,
           content: `https://www.p-godoy/static${defaultImage}`,
         },
+        { property: "og:image:type", content: "image/jpeg" },
+        { property: "og:image:width", content: "600" },
+        { property: "og:image:height", content: "400" },
         {
-          property: "google-site-verification",
+          name: "google-site-verification",
           content: "diPbUT3K3ru3NiybV9Y0HZR3oVz6VCQWyM_zxDNG0MQ",
         },
       ].concat(meta)}
