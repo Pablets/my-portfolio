@@ -30,7 +30,7 @@ function SEO({ description, lang, meta, title }) {
   const defaultTitle = site.siteMetadata?.title
   const defaultImage = site.siteMetadata.image
 
-      console.log(defaultImage)
+  console.log(defaultImage)
 
   return (
     <Helmet
@@ -58,7 +58,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://www.p-godoy/${defaultImage}`,
+          content: `https://www.p-godoy${defaultImage}`,
+        },
+        {
+          property: "google-site-verification",
+          content: "diPbUT3K3ru3NiybV9Y0HZR3oVz6VCQWyM_zxDNG0MQ",
         },
       ].concat(meta)}
     />
