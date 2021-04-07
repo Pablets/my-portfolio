@@ -58,7 +58,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://www.p-godoy${defaultImage}`,
+          content: `https://www.p-godoy/static${defaultImage}`,
         },
         {
           property: "google-site-verification",
