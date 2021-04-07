@@ -44,7 +44,7 @@ const IndexPage = () => {
         description={`Full stack developer currently working with MERN stack.`}
         author={`Pablo Godoy`}
         url={"https://www.p-godoy.com/"}
-        image={"https://www.p-godoy.com/static/images/p-godoy-img.jpg"}
+        image={"http://www.p-godoy.com/static/images/p-godoy-img.jpg"}
       />
       <div id="top" className="bg-transparent sm:static text-gray-400 w-full ">
         <motion.div

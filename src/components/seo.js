@@ -56,10 +56,10 @@ function SEO({ description, lang, meta, title }) {
           property: `og:type`,
           content: `website`,
         },
-        { property: "og:image", content: "http://example.com/ogp.jpg" },
+        { property: "og:image", content: `http://www.p-godoy/static/images/p-godoy-img.jpg`},
         {
           property: `og:image:secure_url`,
-          content: `https://www.p-godoy/static${defaultImage}`,
+          content: `https://www.p-godoy/static/images/p-godoy-img.jpg`,
         },
         { property: "og:image:type", content: "image/jpeg" },
         { property: "og:image:width", content: "600" },
