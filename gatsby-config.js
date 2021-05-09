@@ -15,6 +15,12 @@ module.exports = {
     "gatsby-plugin-postcss",
     `gatsby-plugin-anchor-links`,
     {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-WRK5BMV',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
