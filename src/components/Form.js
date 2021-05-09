@@ -59,7 +59,7 @@ const Form = () => {
                 <label htmlFor="name" className="sr-only">
                   Name
                 </label>
-                {errors.name && (
+                {errors && (
                   <div className="flex ">
                     <div className="relative mx-2">
                       <div className="bg-black text-white text-xs rounded py-1 px-4 right-0 bottom-full">
