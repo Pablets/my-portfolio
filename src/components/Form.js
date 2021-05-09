@@ -11,6 +11,8 @@ function encode(data) {
   return content
 }
 
+//Form disabled
+
 const Form = () => {
   const isDesktop = useMediaQuery({
     query: "(min-device-width: 1224px)",
